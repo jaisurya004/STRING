@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include<ctype.h>
+int main()
+{
+    char a[100],b[100];
+    fgets(a,100,stdin);
+    int c[26]={0};
+    int d[26]={0};
+    int l1=strlen(a);
+    int l2=strlen(b);
+    
+    for(int i=0;i<l1;i++){
+        int lower=tolower(a[i]);
+        c[lower-'a']++;
+    }
+   for(int i=0;i<26;i++){
+    if(c[i]==0){
+        printf("it is not a pnagram");
+        return 0;
+    }
+   }
+   printf("it is a pnagram");
+    return 0;
+}
