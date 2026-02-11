@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include<ctype.h>
+int main()
+{
+    char a[100];
+    int i=0,count=0,sum=0;
+    fgets(a,100,stdin);
+    int len=strlen(a);
+    char temp=0;
+    if(a[len-1]=='\n'){
+        a[len-1]='\0';
+        len--;
+    }
+    for(i=0;i<len;i++){
+        if(isdigit(a[i])){
+           // count++;
+            sum=sum+a[i] - '0';
+        }
+    }
+    printf("%d ",sum);
+    while(sum!='\0'){
+        sum/=10;
+        count++;
+    }
+    printf("%d ",count);
+     
+    return 0;
+}
